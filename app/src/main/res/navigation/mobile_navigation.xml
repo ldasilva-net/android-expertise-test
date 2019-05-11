@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/mostPopularMoviesFragment">
+
+    <fragment
+        android:id="@+id/mostPopularMoviesFragment"
+        android:name="net.ldasilva.expertisetest.ui.movie.list.fragments.MostPopularFragment"
+        android:label="TheMovieDB - Most popular"
+        tools:layout="@layout/movies_list_fragment" >
+        <action
+            android:id="@+id/actionDetail"
+            app:destination="@+id/movieDetailFragment"
+            app:enterAnim="@anim/fade_in_right"
+            app:exitAnim="@anim/fade_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/topRatedMoviesFragment"
+        android:name="net.ldasilva.expertisetest.ui.movie.list.fragments.TopRatedFragment"
+        android:label="TheMovieDB - Top rated"
+        tools:layout="@layout/movies_list_fragment" >
+        <action
+            android:id="@+id/actionDetail"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/fade_in_right"
+            app:exitAnim="@anim/fade_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/upcomingMoviesFragment"
+        android:name="net.ldasilva.expertisetest.ui.movie.list.fragments.UpcomingFragment"
+        android:label="TheMovieDB - Upcoming"
+        tools:layout="@layout/movies_list_fragment" >
+        <action
+            android:id="@+id/actionDetail"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/fade_in_right"
+            app:exitAnim="@anim/fade_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="net.ldasilva.expertisetest.ui.movie.detail.MovieDetailFragment"
+        tools:layout="@layout/movie_detail_fragment" >
+        <argument
+            android:name="id"
+            app:argType="long"
+            app:exitAnim="@anim/fade_out_left"/>
+    </fragment>
+</navigation>
