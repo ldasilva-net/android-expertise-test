@@ -55,7 +55,7 @@ abstract class MovieListFragment : ScopedFragment(), KodeinAware,
         getMovies(searchMovieType = searchMovieType)
     }
 
-    private fun bindUI(query: String = "") = launch(Dispatchers.Main) {
+    private fun bindUI() = launch(Dispatchers.Main) {
         viewModel.movies.observe(this@MovieListFragment, Observer { newValues ->
             if (newValues == null) return@Observer
 

@@ -50,12 +50,12 @@ class MovieDetailFragment : ScopedFragment(), KodeinAware {
     private fun bindUI() = launch(Dispatchers.Main) {
         val movie = viewModel.movie.await()
 
-        movie.observe(this@MovieDetailFragment, Observer { movie ->
-            if (movie == null) return@Observer
+        movie.observe(this@MovieDetailFragment, Observer {
+            if (it == null) return@Observer
 
-            updateTitle(movie.title)
-            updateTextViews(movie)
-            updatePoster(movie.posterPath)
+            updateTitle(it.title)
+            updateTextViews(it)
+            updatePoster(it.posterPath)
         })
     }
 
